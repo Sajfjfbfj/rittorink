@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html class="dark" lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MATOMA - Links</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&amp;family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style type="text/tailwindcss">
+:root {
+    --glitch-speed: 500ms;
+}
+body {
+    font-family: 'Roboto Mono', monospace;
+}
+.font-cyber {
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-cyan), 0 0 20px var(--neon-magenta), 0 0 40px var(--neon-magenta);
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0;
+}
+.delay-150 { animation-delay: 150ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-700 { animation-delay: 700ms; }
+.glitch-effect {
+    position: relative;
+}
+.glitch-effect::before,
+.glitch-effect::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: transparent;
+    clip: rect(auto, auto, auto, auto);
+}
+.glitch-effect::before {
+    left: -2px;
+    text-shadow: 2px 0 var(--neon-magenta);
+    animation: glitch-anim-1 var(--glitch-speed) infinite linear alternate-reverse;
+}
+.glitch-effect::after {
+    left: 2px;
+    text-shadow: -2px 0 var(--neon-cyan);
+    animation: glitch-anim-2 var(--glitch-speed) infinite linear alternate-reverse;
+}
+@keyframes glitch-anim-1 {
+    0% { clip-path: inset(40% 0 40% 0); }
+    20% { clip-path: inset(10% 0 60% 0); }
+    40% { clip-path: inset(50% 0 20% 0); }
+    60% { clip-path: inset(25% 0 55% 0); }
+    80% { clip-path: inset(0 0 70% 0); }
+    100% { clip-path: inset(60% 0 10% 0); }
+}
+@keyframes glitch-anim-2 {
+    0% { clip-path: inset(65% 0 10% 0); }
+    20% { clip-path: inset(80% 0 5% 0); }
+    40% { clip-path: inset(45% 0 30% 0); }
+    60% { clip-path: inset(70% 0 15% 0); }
+    80% { clip-path: inset(40% 0 40% 0); }
+    100% { clip-path: inset(90% 0 2% 0); }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(-5px); }
+    50% { transform: translateY(5px); }
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+.holographic-ring {
+    animation: spin 20s linear infinite;
+}
+.avatar-float {
+    animation: float 6s ease-in-out infinite;
+}
+@keyframes particles {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100px) scale(0.5); opacity: 0; }
+}
+.particle {
+    position: absolute;
+    width: 3px; height: 3px;
+    border-radius: 50%;
+    background-color: var(--particle-color, #00FFFF);
+    animation: particles linear infinite;
+}
+</style>
+<script id="tailwind-config">
+tailwind.config = {
+    darkMode: "class",
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#2A4073",
+                "background-dark": "#0A0A14",
+                "neon-cyan": "#00FFFF",
+                "neon-magenta": "#FF00FF",
+                "light-gray": "#D1D5DB",
+            },
+            fontFamily: {
+                "display": ["Roboto Mono", "monospace"],
+                "cyber": ["Orbitron", "sans-serif"]
+            },
+            boxShadow: {
+                'neon-cyan': '0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 20px #00FFFF',
+                'neon-magenta': '0 0 5px #FF00FF, 0 0 10px #FF00FF, 0 0 20px #FF00FF',
+                'neon-glow': '0 0 8px rgba(0, 255, 255, 0.5), 0 0 16px rgba(255, 0, 255, 0.5)',
+            }
+        },
+    },
+}
+</script>
+<style>
+body {
+    min-height: max(884px, 100dvh);
+    background-color: #0A0A14;
+}
+.geometric-bg {
+    background-image:
+        linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+.hologram-gradient {
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1), rgba(0, 255, 255, 0.1));
+    background-size: 200% 200%;
+    animation: hologram-bg 10s ease infinite;
+}
+@keyframes hologram-bg {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.profile-img-clip {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+</style>
+</head>
+
+<body class="bg-background-dark text-light-gray">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden font-display">
+  <div class="absolute inset-0 z-0 opacity-50">
+    <div class="absolute inset-0 geometric-bg"></div>
+    <div class="absolute top-0 left-0 w-1/2 h-1/2 bg-neon-cyan/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-1/2 h-1/2 bg-neon-magenta/10 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative z-10 flex flex-col items-center w-full px-4 pt-12 pb-6">
+    <div class="flex p-4 @container w-full max-w-md">
+      <div class="flex w-full flex-col gap-4 items-center">
+        <div class="flex gap-4 flex-col items-center">
+          <div class="relative w-48 h-48 animate-fadeInUp opacity-0 group">
+            <div class="absolute inset-0 holographic-ring" style="perspective: 1000px;">
+              <div class="absolute inset-0 rounded-full border-t-2 border-b-2 border-neon-cyan/50" style="transform: rotateX(75deg); transform-style: preserve-3d;"></div>
+              <div class="absolute inset-0 rounded-full border-t-2 border-b-2 border-neon-magenta/30" style="transform: rotateX(75deg) rotateY(60deg); transform-style: preserve-3d;"></div>
+            </div>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="relative w-40 h-40 avatar-float transition-transform duration-300 ease-out group-hover:scale-105 group-active:scale-95">
+<div class="absolute inset-0 bg-center bg-no-repeat aspect-square bg-cover rounded-full" 
+     style='background-image: url("img/icon.png"); filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6));'></div>
+                <div class="absolute -inset-1 rounded-full border-2 border-neon-cyan opacity-50 shadow-neon-cyan blur-[2px]"></div>
+                <div class="absolute inset-0 rounded-full" style="background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%), radial-gradient(circle at 50% 0%, rgba(255,255,255,0.2), transparent 70%);"></div>
+              </div>
+            </div>
+            <div class="absolute inset-0 w-full h-full pointer-events-none">
+              <div class="particle" style="--particle-color:#00FFFF; bottom:50%; left:50%; animation-duration:3s;"></div>
+              <div class="particle" style="--particle-color:#FF00FF; bottom:50%; left:50%; animation-duration:4s; animation-delay:0.5s;"></div>
+              <div class="particle" style="--particle-color:#00FFFF; bottom:50%; left:50%; animation-duration:2.5s; animation-delay:1s;"></div>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-center text-center mt-4">
+            <p class="text-light-gray text-4xl font-bold leading-tight font-cyber tracking-wider animate-fadeInUp opacity-0 delay-150 glitch-effect" data-text="MATOMA">MATOMA</p>
+<p class="text-neon-cyan/80 text-base font-normal leading-normal mt-2 animate-fadeInUp opacity-0 delay-300">// すべての弓道人へ</p>
+            <p class="text-light-gray/60 text-base font-normal leading-normal animate-fadeInUp opacity-0 delay-500">[ @matoma.art ]</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center w-full mt-8">
+      <div class="flex flex-1 gap-6 max-w-md flex-col items-stretch px-4 py-3">
+        <a class="group relative flex min-w-[84px] max-w-md cursor-pointer items-center justify-center overflow-hidden h-16 px-5 bg-black/50 text-light-gray text-lg font-bold leading-normal tracking-[0.2em] w-full border-2 border-neon-cyan/50 backdrop-blur-sm transition-all hover:border-neon-cyan hover:text-neon-cyan hover:shadow-neon-glow active:scale-95 animate-fadeInUp opacity-0 delay-300" href="https://x.com/matoma03_matoma" style="clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));">
+          <span class="absolute inset-0 hologram-gradient opacity-0 group-hover:opacity-100 transition-opacity"></span>
+          <span class="relative z-10 truncate">X (TWITTER)</span>
+        </a>
+        <a class="group relative flex min-w-[84px] max-w-md cursor-pointer items-center justify-center overflow-hidden h-16 px-5 bg-black/50 text-light-gray text-lg font-bold leading-normal tracking-[0.2em] w-full border-2 border-neon-cyan/50 backdrop-blur-sm transition-all hover:border-neon-cyan hover:text-neon-cyan hover:shadow-neon-glow active:scale-95 animate-fadeInUp opacity-0 delay-500" href="https://t.co/mBBORuMieK">
+          <span class="absolute inset-0 hologram-gradient opacity-0 group-hover:opacity-100 transition-opacity"></span>
+          <span class="relative z-10 truncate">BLOG</span>
+        </a>
+        <a class="group relative flex min-w-[84px] max-w-md cursor-pointer items-center justify-center overflow-hidden h-16 px-5 bg-black/50 text-light-gray text-lg font-bold leading-normal tracking-[0.2em] w-full border-2 border-neon-cyan/50 backdrop-blur-sm transition-all hover:border-neon-cyan hover:text-neon-cyan hover:shadow-neon-glow active:scale-95 animate-fadeInUp opacity-0 delay-700" href="https://line.me/ti/g2/WYtGg63kCeKw0H9LUYw2uSylwzYiCWS6fr-Vzg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default">
+          <span class="absolute inset-0 hologram-gradient opacity-0 group-hover:opacity-100 transition-opacity"></span>
+          <span class="relative z-10 truncate">オープンチャット</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="w-full mt-auto pt-16">
+      <p class="text-light-gray/50 text-sm font-normal leading-normal pb-3 pt-1 px-4 text-center animate-fadeInUp opacity-0" style="animation-delay:900ms;">© 2024 MATOMA // ALL RIGHTS RESERVED</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
